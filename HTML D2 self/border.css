@@ -7,10 +7,19 @@
 .class2{
     border: 3px  dashed green;
     border-radius: 25px;
-    padding: 15px;
+    padding: 50px;
     margin: 45px;
 }
 .class3{
     border: 3px dotted blue;
     margin: 45px;
+}
+.circle{
+    border: 3px solid orange;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
 }
