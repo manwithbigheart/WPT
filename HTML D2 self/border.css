@@ -1,9 +1,16 @@
 .class1{
     border: 3px solid red;
+    border-radius: 50px;
+    padding: 20px;
+    margin: 50px;
 }
 .class2{
     border: 3px  dashed green;
+    border-radius: 25px;
+    padding: 15px;
+    margin: 45px;
 }
 .class3{
     border: 3px dotted blue;
+    margin: 45px;
 }
