@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- ----------------------------------------------------------------------------------- -->
+  
+  <style>
+    /* Element selector */
+    p {
+      color: #a81b1b;
+    }
+    /* ID selector */
+    #intro {
+      font-weight: bold;
+      color: blue;
+    }
+    /* Class selector */
+    .highlight {
+      background-color: rgb(218, 218, 104);
+    }
+    /* Descendant selector */
+    div .note {
+      font-style: italic;
+      color: green;
+    }
+    /* List item selector */
+    ul li {
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+
+<!-- ----------------------------------------------------------------------------------- -->
+
+<body>
+  <h1>CSS Selectors Demo</h1>
+
+  <p id="intro">This is an introduction paragraph.</p>
+
+  <p class="highlight">This paragraph is highlighted using a class selector.</p>
+  <p>This is a regular paragraph.</p>
+  
+  <ul>
+    <li>First item</li>
+    <li class="highlight">Second item (highlighted)</li>
+    <li>Third item</li>
+  </ul>
+
+  <div>
+    <section class="note">Note: This is a note inside a div.</section>
+  </div>
+</body>
+
+<!-- ----------------------------------------------------------------------------------- -->
+</html>
