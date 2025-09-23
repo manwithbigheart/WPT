@@ -1,0 +1,129 @@
+22/9/25
+
+
+*What is HTML ?
+-it is use to create structure of website or web application.
+-it is use to display data to user on browser.
+-it stand for Hyper Text Markup Language.
+-latest version of html is html5.
+
+*it is tag basis Language.
+<tag> 
+-in html there are two types of tag 
+1.paired tag: <startTag> </endTag>
+2.unpaired tag: <single>
+
+*how to create web page 
+step1: create file and save it with fileName.html or fileName.htm extension.
+step2: write code in it.
+step3: run it on browser.
+
+<!DOCTYPE html> : it tells search engin , this is html type of document belongto version 5.
+
+in html file html is root tag 
+in html there are two part 
+1.head part: it contain external and meta data in it.
+2.body part: it is use to display data or information on browser.
+
+*commenting in html 
+-writting hit in coding which will do not execute.
+<!-- message -->
+
+<br> tag is use to break a line 
+<hr> horizontal rural it will draw horizontal line 
+
+What is list :
+-it collection items in perticular order 
+-In html we have three types of list 
+1.Ordered List(ol): types=> numner,A,B,C,a,bc,I,II,III,i,ii,iii
+2.Unourdered List(ul) : types=> disc,square,circle,none
+3.Description List(dl): 
+                 dl: Description list 
+                 dt: define term 
+                 dd: define description  
+
+
+*What is Element in HTML 
+<startTag attribute="value"> content or information </endingTag> 
+
+-attribute:-it provide additional information about tag.
+           -it always write in starting tag.
+           -it write in key and value paire formate 
+
+*in html we have two types of element 
+1.Block elemnt: -the element which takes 100% width of its screen.
+                -it always start with new line.
+                -ex: h1-h6,p,div,all list,table ,form 
+
+2.Inline element:-the element which takes required width of it. 
+                 -it will never start on new line.
+                 -ex: b,i,u,a,img
+
+task1: create order list with type a,b,c,I,II,,i,ii,iii
+task2: create unorder list with type square,none 
+task3: created nested list 
+        .FrontEnd 
+           1.HTML 
+           2.Css
+           3.Bootstrap
+           4.Js
+        .Backend 
+           A.Java
+           B.Python
+           C.Nodejs   
+           D.Dotnet
+        .Database 
+           I.MySql 
+          II.MongoDB
+          III.Postgray 
+*How to insert images by using relative           
+*How to insert vido file by using video tag         
+*How to insert audio file by using audio tag 
+
+*use of iframe Tag :
+-there are multiple uses of iframe tag 
+1. display google map location 
+2. insert youtube video 
+3. inserting one website into webpage 
+
+Q. what is differance between html and html5. 
+Q. what are the features of html5.
+
+
+-symantic element:-the element which has specific meaning
+                  -ex: header,footer,nav,address,aside,section
+-new Tag,new attribute,new input type:
+-multimedia element introduce: use of audio and video tag 
+-API introduce in html5: 
+ 1.Geolocation: it return user current position. for this in your system gps must there. 
+ 2.Drag and Drop: it allows us to grab an object and drag another place.
+ 3.Web-worker:it is small javascript code which execute at backend of browser without affecting current execution.
+ 4.web-storage: it is use to store user data on browser.
+               -there are two types of web storage
+               1.local-storage: it is use to store user data permanatly.
+               2.session-storage: it is use to store user data temprary.
+ 5.SSE(Server Sent Event): it allows us to get automatic update from server.
+
+*Link : in html it is use to for redirection or navigation from one file to another 
+-for this we use anchore tag (a);
+
+Task: display 5 scrolling images 
+Task: create 10 images as link 
+
+*how to insert symbol and special code 
+
+*How to create table in html 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
