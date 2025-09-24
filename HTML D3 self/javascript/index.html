@@ -100,7 +100,9 @@
       // ----------------------------------function in JS---------------------------
       // ---------------------------------default function---------------------------
 
-
+      document.write("<hr>");
+      document.write("function in JS" + "<br>" + "<br>");
+      document.write("Default function " + "<br>");
       function greet() {
         return "Hello ";
       }
@@ -108,23 +110,62 @@
 
       //-----------------------------------------------------------------------------------------
       // -------------------------------parameterized function---------------------------
-
+      document.write("<hr>");
+      document.write("Parameterized function " + "<br>");
       function add(a, b) {
         return a + b;
       }
       document.write("Addition is: " + add(5, 10) + "<br>");
       // -----------------------------------------------------------------------------------------
       // ----------------------------------Arrow function in JS---------------------------
+      document.write("<hr>");
+      document.write("Arrow function " + "<br>");
       const multiply = (a, b) => {
         return a * b;
       };
       document.write("Multiplication is: " + multiply(5, 10) + "<br>");
       // -----------------------------------------------------------------------------------------
       // ----------------------------------Anonymous function in JS---------------------------
+      document.write("<hr>");
+      document.write("Anonymous function " + "<br>");
       const divide = function (a, b) {
         return a / b;
       };
       document.write("Division is: " + divide(10, 5) + "<br>");
+
+      // -----------------------------------------------------------------------------------------
+      // ----------------------------------Rest parameter function in JS---------------------------
+      document.write("<hr>");
+      document.write("Rest parameter function " + "<br>");
+      function sum(...args) {
+        let total = 0;
+        for (let i = 0; i < args.length; i++) {
+          total += args[i];
+        }
+        return total;
+      }
+      document.write("Sum is: " + sum(1, 2, 3, 4, 5) + "<br>");
+
+      // -----------------------------------------------------------------------------------------
+      // ----------------------------------IIFE function in JS---------------------------
+      document.write("<hr>");
+      document.write("IIFE function " + "<br>");
+
+      (function () {
+        document.write("IIFE function executed<br>");
+      })();
+      // -----------------------------------------------------------------------------------------
+      // ----------------------------------Recursion function in JS---------------------------
+      document.write("<hr>");
+      document.write("Recursion function " + "<br>");
+      function factorial(n) {
+        if (n === 0) {
+          return 1;
+        } else {
+          return n * factorial(n - 1);
+        }
+      }
+      document.write("Factorial is: " + factorial(5) + "<br>");
       // -----------------------------------------------------------------------------------------
 
     </script>
