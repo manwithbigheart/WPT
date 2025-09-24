@@ -1,20 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learing JS</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learing JS</title>
+  </head>
+  <body>
+    <h1 id="d1"></h1>
 
-  <h1 id="d1"></h1>
-  
-  <script>
-    alert("Welcome to JavaScript"); // pop up
-    console.log("Hello World"); // debug or check in console
-    document.write("Hello World from JS"); // write in html page
-    document.getElementById("d1").innerHTML = "Hello World from JS using DOM"; // write in html page using DOM
+    <script>
+      // ----------------How to write/bring output in JavaScript---------------------------
 
-  </script>
-</body>
+      alert("Welcome to JavaScript"); // pop up
+      console.log("Hello World"); // debug or check in console
+      document.write("Hello World from JS"); // write in html page
+      document.getElementById("d1").innerHTML = "Hello World from JS using DOM"; // write in html page using DOM
+
+      // ---------------------------------------------------------------------------------------
+
+      // --------------------variable declaration in JS---------------------------
+
+      var x = 5; // number
+      var y = "Hello"; // string
+      var z = true; // boolean
+      var a = 5.5; // float
+      var b = "A"; // char
+      var c = null; // null
+      var d; // undefined
+
+      // difference between null and undefined
+      // null means variable is empty
+      // undefined means variable is not defined
+
+
+      // ----------------Hoisting--------  
+
+      // var can be re-declared and re-assigned
+      var x = 10; // re-declared
+      // hoisting in JS
+      console.log(m); // undefined
+      var m = 10;
+      console.log(m); // 10
+      // var is function scoped
+      // let and const are block scoped
+
+
+      // -----------------------------------------------------------------------------------------
+      // --------------------how to check data types in console-----------------------------------
+      console.log(typeof x);
+      console.log(typeof y);
+      console.log(typeof z);
+      console.log(typeof a);
+      console.log(typeof b);
+      console.log(typeof c);
+      console.log(typeof d);
+      // -----------------------------------------------------------------------------------------
+      // --------------------data types in JS---------------------------
+      document.write("<br>");
+      document.write(
+        "Value of x is: " + x + " and type is: " + typeof x + "<br>"
+      );
+      document.write(
+        "Value of y is: " + y + " and type is: " + typeof y + "<br>"
+      );
+      document.write(
+        "Value of z is: " + z + " and type is: " + typeof z + "<br>"
+      );
+      document.write(
+        "Value of a is: " + a + " and type is: " + typeof a + "<br>"
+      );
+      document.write(
+        "Value of b is: " + b + " and type is: " + typeof b + "<br>"
+      );
+      document.write(
+        "Value of c is: " + c + " and type is: " + typeof c + "<br>"
+      );
+      document.write(
+        "Value of d is: " + d + " and type is: " + typeof d + "<br>"
+      );
+
+      // -----------------------------------------------------------------------------------------
+
+      // --------------------constant in JS---------------------------
+      const pi = 3.14;
+      document.write("Value of pi is: " + pi + "<br>");
+      // -----------------------------------------------------------------------------------------
+
+      // --------------------let in JS---------------------------
+      let city = "Pune";
+      document.write(
+        "City is: " + city + " and type is: " + typeof city + "<br>"
+      );
+      let pincode = 411057;
+      document.write(
+        "Pincode is: " + pincode + " and type is: " + typeof pincode + "<br>"
+      );
+      // -----------------------------------------------------------------------------------------
+
+      // ----------------------------------function in JS---------------------------
+      // ---------------------------------default function---------------------------
+
+
+      function greet() {
+        return "Hello ";
+      }
+      document.write(greet() + "<br>");
+
+      //-----------------------------------------------------------------------------------------
+      // -------------------------------parameterized function---------------------------
+
+      function add(a, b) {
+        return a + b;
+      }
+      document.write("Addition is: " + add(5, 10) + "<br>");
+      // -----------------------------------------------------------------------------------------
+      // ----------------------------------Arrow function in JS---------------------------
+      const multiply = (a, b) => {
+        return a * b;
+      };
+      document.write("Multiplication is: " + multiply(5, 10) + "<br>");
+      // -----------------------------------------------------------------------------------------
+      // ----------------------------------Anonymous function in JS---------------------------
+      const divide = function (a, b) {
+        return a / b;
+      };
+      document.write("Division is: " + divide(10, 5) + "<br>");
+      // -----------------------------------------------------------------------------------------
+
+    </script>
+  </body>
 </html>

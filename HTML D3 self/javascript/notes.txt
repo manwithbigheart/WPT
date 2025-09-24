@@ -1,0 +1,88 @@
+JavaScript Detailed Notes
+
+1. Introduction
+- JavaScript is a high-level, interpreted programming language.
+- Used primarily for web development to create interactive effects within web browsers.
+- Follows the ECMAScript specification.
+
+2. Basic Syntax
+- Statements end with a semicolon (optional but recommended).
+- Case-sensitive language.
+- Comments: // for single-line, /* */ for multi-line.
+
+3. Variables
+- Declared using var, let, or const.
+  - var: function-scoped, can be redeclared.
+  - let: block-scoped, cannot be redeclared in the same scope.
+  - const: block-scoped, must be initialized, cannot be reassigned.
+
+4. Data Types
+- Primitive: string, number, boolean, null, undefined, symbol, bigint.
+- Reference: object, array, function.
+
+5. Operators
+- Arithmetic: +, -, *, /, %, ++, --
+- Assignment: =, +=, -=, *=, /=
+- Comparison: ==, ===, !=, !==, >, <, >=, <=
+- Logical: &&, ||, !
+
+6. Control Structures
+- if, else if, else
+- switch
+- for, while, do...while
+- break, continue
+
+7. Functions
+- Declared with function keyword or as arrow functions.
+- Can be assigned to variables, passed as arguments, or returned from other functions (first-class functions).
+- Example:
+  function add(a, b) { return a + b; }
+  const multiply = (a, b) => a * b;
+
+8. Objects and Arrays
+- Objects: key-value pairs.
+  let person = { name: "Alice", age: 25 };
+- Arrays: ordered lists.
+  let numbers = [1, 2, 3, 4];
+
+9. Scope and Closures
+- Scope: determines variable accessibility (global, function, block).
+- Closure: function remembers variables from its lexical scope even after the outer function has finished executing.
+
+10. DOM Manipulation
+- Document Object Model (DOM) represents HTML elements as objects.
+- Access elements: document.getElementById, document.querySelector, etc.
+- Modify content: element.innerHTML, element.textContent.
+- Event handling: element.addEventListener('click', handler);
+
+11. Asynchronous JavaScript
+- Callbacks: functions passed as arguments to be executed later.
+- Promises: represent eventual completion or failure of an async operation.
+- async/await: syntactic sugar for working with promises.
+
+12. Error Handling
+- try...catch...finally blocks.
+- throw statement to raise exceptions.
+
+13. ES6+ Features
+- let and const for variable declarations.
+- Arrow functions.
+- Template literals: `Hello, ${name}`
+- Destructuring assignment.
+- Spread and rest operators (...).
+- Classes and modules.
+- Default parameters.
+
+14. Useful Built-in Objects
+- Math, Date, JSON, RegExp, Array, String, Object.
+
+15. Best Practices
+- Use strict mode: 'use strict';
+- Prefer const and let over var.
+- Keep code modular and DRY (Don't Repeat Yourself).
+- Use meaningful variable and function names.
+- Handle errors gracefully.
+
+References:
+- MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- ECMAScript Specification: https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
