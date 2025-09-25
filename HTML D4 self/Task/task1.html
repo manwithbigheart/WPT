@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1: Filter Employees by Blood Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl">
+        <h1 class="text-2xl font-bold mb-4 text-center text-gray-800">Employee Details</h1>
+        <p class="text-center text-gray-600 mb-6">Displaying employees with blood group O+</p>
+        
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">ID</th>
+                        <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Name</th>
+                        <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Department</th>
+                        <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Blood Group</th>
+                    </tr>
+                </thead>
+                <tbody id="employee-table-body">
+                    <!-- Employee data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const employees = [
+                { id: 101, name: 'abdul rehman', department: 'Engineering', bloodGroup: 'A+' },
+                { id: 102, name: 'rushab bbhusanar', department: 'Marketing', bloodGroup: 'B-' },
+                { id: 103, name: 'anuj kumar', department: 'Engineering', bloodGroup: 'O+' },
+                { id: 104, name: 'asif shaikh', department: 'HR', bloodGroup: 'AB+' },
+                { id: 105, name: 'himansu patel', department: 'Sales', bloodGroup: 'O+' },
+                { id: 106, name: 'sandil pawar', department: 'Marketing', bloodGroup: 'A-' },
+                { id: 107, name: 'hritik roshan', department: 'HR', bloodGroup: 'O-' },
+                { id: 108, name: 'sharuk khan', department: 'Sales', bloodGroup: 'O+' }
+            ];
+
+            const filteredEmployees = employees.filter(employee => employee.bloodGroup === 'O+');
+            const tableBody = document.getElementById('employee-table-body');
+
+            if (filteredEmployees.length > 0) {
+                filteredEmployees.forEach(employee => {
+                    const row = document.createElement('tr');
+                    row.className = 'border-b hover:bg-gray-50';
+                    row.innerHTML = `
+                        <td class="py-3 px-4 text-gray-700">${employee.id}</td>
+                        <td class="py-3 px-4 text-gray-700">${employee.name}</td>
+                        <td class="py-3 px-4 text-gray-700">${employee.department}</td>
+                        <td class="py-3 px-4 font-medium text-green-600">${employee.bloodGroup}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                 const row = document.createElement('tr');
+                 row.innerHTML = `<td colspan="4" class="text-center py-4 text-gray-500">No employees found with O+ blood group.</td>`;
+                 tableBody.appendChild(row);
+            }
+        });
+    </script>
+</body>
+</html>

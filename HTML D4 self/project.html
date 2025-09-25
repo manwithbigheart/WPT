@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Adventure: The Complete Guide!</title>
+    <style>
+        /* --- General Styles --- */
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5a623;
+            --background-color: #f4f7f9;
+            --text-color: #333;
+            --code-bg: #2d2d2d;
+            --code-text: #e6e6e6;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+        header p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* --- Topic Sections --- */
+        .topic-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+            padding: 25px;
+        }
+        .topic-section h2 {
+            font-size: 2em;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .topic-section h2 .icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+
+        /* --- Method Explorer --- */
+        .method-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .method-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        .method-btn:hover, .method-btn.active {
+            background-color: #357ABD;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* --- Method Details --- */
+        .method-details {
+            display: none;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+        .method-details h3 {
+            font-size: 1.4em;
+            color: var(--text-color);
+            margin-top: 0;
+        }
+        .method-details .syntax {
+            background-color: #eef5fc;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #357ABD;
+            white-space: pre-wrap;
+        }
+
+        /* --- Interactive Example --- */
+        .interactive-example {
+            margin-top: 20px;
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            padding: 15px;
+        }
+        .interactive-example h4 {
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+        .code-editor {
+            width: 100%;
+            height: 120px;
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 10px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 1em;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+        .run-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+        .run-btn:hover {
+            background-color: #e0930f;
+        }
+        .output {
+            margin-top: 10px;
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            min-height: 20px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .output .prompt {
+            color: #666;
+            margin-right: 5px;
+        }
+        
+        /* --- Mini Challenge --- */
+        .mini-challenge {
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #f5a623, #f76b1c);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .mini-challenge h4 {
+            margin-top: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            padding-bottom: 5px;
+        }
+        .mini-challenge p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>JS Adventure 🚀</h1>
+            <p>Your fun, interactive guide to learning JavaScript essentials.</p>
+        </header>
+
+        <section class="topic-section" id="arrays">
+            <h2><span class="icon">📦</span>Arrays</h2>
+            <p>Arrays are like lists where you can store multiple values in a single variable. Think of a shopping list or a collection of your favorite songs!</p>
+            <div class="method-list"></div>
+            <div class="method-content"></div>
+        </section>
+
+        <section class="topic-section" id="strings">
+            <h2><span class="icon">📜</span>Strings</h2>
+            <p>Strings are just text. Anything you write inside quotes (like "hello" or 'world') is a string. They are fundamental for handling any textual data.</p>
+            <div class="method-list"></div>
+            <div class="method-content"></div>
+        </section>
+
+        <section class="topic-section" id="objects">
+            <h2><span class="icon">⚙️</span>Objects</h2>
+            <p>Objects let you group related data together using key-value pairs. Think of a user profile: it has a `name`, an `age`, and an `email`—all part of one object!</p>
+            <div class="method-list"></div>
+            <div class="method-content"></div>
+        </section>
+    </div>
+
+    <script>
+    const data = {
+        arrays: [
+            {
+                name: '.push()',
+                description: 'Adds one or more elements to the END of an array.',
+                syntax: 'array.push(element1, ...)',
+                exampleCode: `const party = ["Wizard", "Rogue"];\nparty.push("Warrior", "Cleric");\n\nconsole.log(party); // ["Wizard", "Rogue", "Warrior", "Cleric"]`,
+                challenge: { title: 'Quest: Pack Your Bag! 🎒', task: 'You have a backpack `[]`. Use `.push()` to add "compass" and "map" to it.' }
+            },
+            {
+                name: '.pop()',
+                description: 'Removes the LAST element from an array and returns it.',
+                syntax: 'array.pop()',
+                exampleCode: `const party = ["Wizard", "Rogue", "Warrior"];\nconst removedMember = party.pop();\n\nconsole.log(removedMember); // "Warrior"\nconsole.log(party); // ["Wizard", "Rogue"]`,
+                challenge: { title: 'Quest: Last Cookie! 🍪', task: 'You have a cookie jar `["Choco", "Oatmeal", "Sugar"]`. Use `.pop()` to take the last cookie.' }
+            },
+            {
+                name: '.shift()',
+                description: 'Removes the FIRST element from an array and returns it.',
+                syntax: 'array.shift()',
+                exampleCode: `const queue = ["Person A", "Person B", "Person C"];\nconst firstInLine = queue.shift();\n\nconsole.log(firstInLine); // "Person A"\nconsole.log(queue); // ["Person B", "Person C"]`,
+                challenge: { title: 'Quest: First Customer! 🙋', task: 'A line of customers `["Alice", "Bob"]` is waiting. Use `.shift()` to serve the first person.' }
+            },
+            {
+                name: '.unshift()',
+                description: 'Adds one or more elements to the BEGINNING of an array.',
+                syntax: 'array.unshift(element1, ...)',
+                exampleCode: `const team = ["Bob", "Charlie"];\nteam.unshift("Alice");\n\nconsole.log(team); // ["Alice", "Bob", "Charlie"]`,
+                challenge: { title: 'Quest: VIP Entry! 🌟', task: 'A queue is `["Regular", "Normal"]`. Use `.unshift()` to add a "VIP" to the front of the line.' }
+            },
+            {
+                name: '.map()',
+                description: 'Creates a NEW array by performing an action on each element.',
+                syntax: 'array.map(element => /* return new value */)',
+                exampleCode: `const numbers = [1, 4, 9];\nconst roots = numbers.map(num => Math.sqrt(num));\n\nconsole.log(roots); // [1, 2, 3]`,
+                challenge: { title: 'Quest: Double the Loot! 💎', task: 'You have gems: `[10, 20, 50]`. Use `.map()` to create a new array where each gem\'s value is doubled.' }
+            },
+            {
+                name: '.filter()',
+                description: 'Creates a NEW array with all elements that pass a test.',
+                syntax: 'array.filter(element => /* return true or false */)',
+                exampleCode: `const ages = [32, 33, 16, 40];\nconst adults = ages.filter(age => age >= 18);\n\nconsole.log(adults); // [32, 33, 40]`,
+                challenge: { title: 'Quest: Find Magic Potions! 🧪', task: 'From `["Sword", "Potion", "Shield", "Potion"]`, use `.filter()` to get an array with only "Potion".' }
+            },
+            {
+                name: '.reduce()',
+                description: 'Reduces an array to a single value by executing a function on each element.',
+                syntax: 'array.reduce((accumulator, current) => accumulator + current, initialValue)',
+                exampleCode: `const goldCoins = [10, 25, 5, 30];\nconst totalGold = goldCoins.reduce((sum, coin) => sum + coin, 0);\n\nconsole.log(totalGold); // 70`,
+                challenge: { title: 'Quest: Total Score! 🏆', task: 'You have scores `[100, 250, 50]`. Use `.reduce()` to calculate the total score.' }
+            },
+            {
+                name: '.forEach()',
+                description: 'Executes a function once for each array element. Does not create a new array.',
+                syntax: 'array.forEach(element => { /* do something */ })',
+                exampleCode: `const heroes = ["Link", "Zelda", "Ganon"];\nheroes.forEach(hero => {\n  console.log(hero + " has appeared!");\n});`,
+                challenge: { title: 'Quest: Announce Contestants! 📢', task: 'You have racers `["Mario", "Luigi"]`. Use `.forEach()` to log a message for each, like `"Mario is ready!"`.' }
+            },
+            {
+                name: '.find()',
+                description: 'Returns the FIRST element in an array that satisfies a test.',
+                syntax: 'array.find(element => /* return true or false */)',
+                exampleCode: `const players = [{name: 'Eli', score: 100}, {name: 'Nora', score: 120}];\nconst winner = players.find(p => p.score > 100);\n\nconsole.log(winner); // {name: 'Nora', score: 120}`,
+                challenge: { title: 'Quest: Find the Traitor! 🤫', task: 'In `[{name:"Bob", spy:false}, {name:"Eve", spy:true}]`, use `.find()` to find the object where `spy` is true.' }
+            },
+            {
+                name: '.slice()',
+                description: 'Returns a NEW array containing a portion of the original array. Does NOT modify the original.',
+                syntax: 'array.slice(startIndex, endIndex)',
+                exampleCode: `const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];\nconst middle = animals.slice(1, 4);\n\nconsole.log(middle); // ['bison', 'camel', 'duck']`,
+                challenge: { title: 'Quest: Take a Slice! 🍰', task: 'You have a cake `["layer1", "layer2", "layer3"]`. Use `.slice(0, 2)` to take the first two layers.' }
+            },
+            {
+                name: '.splice()',
+                description: 'MODIFIES an array by removing, replacing, or adding elements.',
+                syntax: 'array.splice(startIndex, deleteCount, item1, ...)',
+                exampleCode: `const months = ['Jan', 'March', 'April', 'June'];\n// Insert 'Feb' at index 1\nmonths.splice(1, 0, 'Feb');\nconsole.log(months); // ["Jan", "Feb", "March", "April", "June"]\n\n// Remove 'April'\nmonths.splice(3, 1);\nconsole.log(months); // ["Jan", "Feb", "March", "June"]`,
+                challenge: { title: 'Quest: Fix the List! 🔧', task: 'You have a list `["apples", "pears", "carrots"]`. Use `.splice(2, 1, "bananas")` to replace "carrots" with "bananas".' }
+            },
+            {
+                name: '.join()',
+                description: 'Joins all elements of an array into a single string.',
+                syntax: 'array.join(separator)',
+                exampleCode: `const elements = ['Fire', 'Air', 'Water'];\nconst joinedString = elements.join(' - ');\n\nconsole.log(joinedString); // "Fire - Air - Water"`,
+                challenge: { title: 'Quest: Form the Sentence! ✍️', task: 'You have words `["JavaScript", "is", "fun"]`. Use `.join(" ")` to make a sentence.' }
+            },
+            {
+                name: '.includes()',
+                description: 'Determines whether an array includes a certain value, returning true or false.',
+                syntax: 'array.includes(valueToFind)',
+                exampleCode: `const petInventory = ['cat', 'dog', 'fish'];\n\nconsole.log(petInventory.includes('dog')); // true\nconsole.log(petInventory.includes('bird')); // false`,
+                challenge: { title: 'Quest: Check for Treasure! 💰', task: 'You have a chest `["gold", "gems"]`. Use `.includes("gold")` to see if you have gold.' }
+            },
+        ],
+        strings: [
+            {
+                name: '.toUpperCase()',
+                description: 'Converts a string to uppercase letters.',
+                syntax: 'string.toUpperCase()',
+                exampleCode: `const message = "Hello, adventurer!";\nconst loudMessage = message.toUpperCase();\n\nconsole.log(loudMessage); // "HELLO, ADVENTURER!"`,
+                challenge: { title: 'Quest: Royal Decree! 👑', task: 'The message `"a new quest"` needs to be official. Use `.toUpperCase()` to make it a royal decree.' }
+            },
+            {
+                name: '.toLowerCase()',
+                description: 'Converts a string to lowercase letters.',
+                syntax: 'string.toLowerCase()',
+                exampleCode: `const whisper = "I FOUND THE SECRET";\nconst quietWhisper = whisper.toLowerCase();\n\nconsole.log(quietWhisper); // "i found the secret"`,
+                challenge: { title: 'Quest: Secret Whisper! 🤫', task: 'An important clue is `"PASSWORD"`. Use `.toLowerCase()` to make it less conspicuous.' }
+            },
+            {
+                name: '.includes()',
+                description: 'Checks if a string contains another string, returning true or false.',
+                syntax: 'string.includes("substring")',
+                exampleCode: `const sentence = "The quick brown fox jumps over the lazy dog.";\nconst hasFox = sentence.includes("fox");\n\nconsole.log(hasFox); // true`,
+                challenge: { title: 'Quest: Treasure Map! 🗺️', task: 'A map clue says `"the treasure is under the X"`. Use `.includes("X")` to check for the mark.' }
+            },
+            {
+                name: '.startsWith()',
+                description: 'Checks if a string begins with the characters of a specified string.',
+                syntax: 'string.startsWith("substring")',
+                exampleCode: `const filename = "image_01.png";\n\nconsole.log(filename.startsWith("image")); // true\nconsole.log(filename.startsWith("audio")); // false`,
+                challenge: { title: 'Quest: Identify the Files! 📁', task: 'A file is named `"chapter1.txt"`. Use `.startsWith("chapter")` to confirm it is a chapter file.' }
+            },
+            {
+                name: '.endsWith()',
+                description: 'Checks if a string ends with the characters of a specified string.',
+                syntax: 'string.endsWith("substring")',
+                exampleCode: `const email = "user@example.com";\n\nconsole.log(email.endsWith(".com")); // true\nconsole.log(email.endsWith(".org")); // false`,
+                challenge: { title: 'Quest: Validate Email! ✔️', task: 'A user provides `"test@email.com"`. Use `.endsWith(".com")` to check if it is a .com address.' }
+            },
+            {
+                name: '.slice()',
+                description: 'Extracts a section of a string and returns it as a new string.',
+                syntax: 'string.slice(startIndex, endIndex)',
+                exampleCode: `const text = "JavaScript";\nconst script = text.slice(4);\n\nconsole.log(script); // "Script"`,
+                challenge: { title: 'Quest: Secret Code! 🕵️', task: 'A message is hidden in `"CODEWORD:Launch"`. Use `.slice()` to extract just "Launch".' }
+            },
+            {
+                name: '.replace()',
+                description: 'Returns a new string with some or all matches of a pattern replaced by a replacement. Replaces only the first occurrence.',
+                syntax: 'string.replace("old", "new")',
+                exampleCode: `const p = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';\nconst updated = p.replace('dog', 'monkey');\n\nconsole.log(updated);`,
+                challenge: { title: 'Quest: Fix the Typo! 📝', task: 'A text says `"Hello worlb"`. Use `.replace("worlb", "world")` to correct it.' }
+            },
+             {
+                name: '.replaceAll()',
+                description: 'Returns a new string with ALL matches of a pattern replaced by a replacement.',
+                syntax: 'string.replaceAll("old", "new")',
+                exampleCode: `const message = "The cat saw another cat.";\nconst newMessage = message.replaceAll("cat", "dog");\n\nconsole.log(newMessage); // "The dog saw another dog."`,
+                challenge: { title: 'Quest: Global Update! 🌎', task: 'You have a story about `"the red car drove past the red house"`. Use `.replaceAll("red", "blue")` to change the color everywhere.' }
+            },
+            {
+                name: '.split()',
+                description: 'Divides a string into an ordered list of substrings, puts them into an array, and returns the array.',
+                syntax: 'string.split(separator)',
+                exampleCode: `const sentence = "A-wizard-is-never-late";\nconst words = sentence.split("-");\n\nconsole.log(words); // ["A", "wizard", "is", "never", "late"]`,
+                challenge: { title: 'Quest: Decipher the Scroll! 📜', task: 'A scroll has items separated by commas: `"sword,shield,potion"`. Use `.split(\',\')` to turn this into an array.' }
+            },
+            {
+                name: '.trim()',
+                description: 'Removes whitespace from both ends of a string.',
+                syntax: 'string.trim()',
+                exampleCode: `const greeting = "   Hello World!   ";\n\nconsole.log(greeting.trim()); // "Hello World!"`,
+                challenge: { title: 'Quest: Clean Up Input! ✨', task: 'A user entered their name as `"  Alice  "`. Use `.trim()` to clean it up before saving.' }
+            },
+        ],
+        objects: [
+            {
+                name: 'Dot Notation',
+                description: 'The simplest way to access a property of an object.',
+                syntax: 'objectName.propertyName',
+                exampleCode: `const hero = {\n  name: "Aragon",\n  class: "Ranger",\n  level: 15\n};\n\nconsole.log(hero.name); // "Aragon"`,
+                challenge: { title: 'Quest: Identify the Dragon! 🐲', task: 'You have `const dragon = { name: "Smaug" }`. Use dot notation to get its name.' }
+            },
+            {
+                name: 'Bracket Notation',
+                description: 'Access properties using a string, useful for names with spaces or stored in variables.',
+                syntax: 'objectName["propertyName"]',
+                exampleCode: `const monster = {\n  "monster type": "Goblin",\n  health: 50\n};\n\nconsole.log(monster["monster type"]); // "Goblin"`,
+                challenge: { title: 'Quest: Open the Chest! 🗝️', task: 'You have a chest `const chest = { "gold coins": 100 }`. Use bracket notation to find out how many coins are inside.' }
+            },
+            {
+                name: 'Object.keys()',
+                description: 'Returns an array containing the names (keys) of an object\'s properties.',
+                syntax: 'Object.keys(objectName)',
+                exampleCode: `const character = { name: "Gandalf", class: "Wizard" };\nconst properties = Object.keys(character);\n\nconsole.log(properties); // ["name", "class"]`,
+                challenge: { title: 'Quest: Spellbook Index! 📖', task: 'You have `const spells = { fireball: 10, heal: 15 }`. Use `Object.keys()` to get a list of all spell names.' }
+            },
+            {
+                name: 'Object.values()',
+                description: 'Returns an array containing the values of an object\'s properties.',
+                syntax: 'Object.values(objectName)',
+                exampleCode: `const potion = { water: "100ml", herb: "2 leaves" };\nconst amounts = Object.values(potion);\n\nconsole.log(amounts); // ["100ml", "2 leaves"]`,
+                challenge: { title: 'Quest: Tally the Scores! 🏆', task: 'You have scores `const scores = { p1: 150, p2: 200 }`. Use `Object.values()` to get an array of just the score numbers.' }
+            },
+            {
+                name: 'Object.entries()',
+                description: 'Returns an array of a given object\'s own [key, value] pairs.',
+                syntax: 'Object.entries(objectName)',
+                exampleCode: `const user = { name: "Bilbo", age: 50 };\nconst entries = Object.entries(user);\n\nconsole.log(entries); // [["name", "Bilbo"], ["age", 50]]`,
+                challenge: { title: 'Quest: Inventory List! 📜', task: 'You have an inventory `const inv = { apples: 5, bread: 2 }`. Use `Object.entries()` to get a list of item-quantity pairs.' }
+            },
+            {
+                name: 'Object.assign()',
+                description: 'Copies all enumerable own properties from one or more source objects to a target object.',
+                syntax: 'Object.assign(target, ...sources)',
+                exampleCode: `const defaults = { theme: "dark", layout: "grid" };\nconst userSettings = { theme: "light" };\nconst finalSettings = Object.assign({}, defaults, userSettings);\n\nconsole.log(finalSettings); // { theme: "light", layout: "grid" }`,
+                challenge: { title: 'Quest: Merge Spellbooks! 📚', task: 'You have two spellbooks: `book1 = { fire: 1 }` and `book2 = { ice: 1 }`. Use `Object.assign()` to merge them into a new, empty object `{}`.' }
+            }
+        ]
+    };
+
+    function setupTopic(topicId, topicData) {
+        const section = document.getElementById(topicId);
+        const methodList = section.querySelector('.method-list');
+        const methodContent = section.querySelector('.method-content');
+
+        topicData.forEach((method, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'method-btn';
+            btn.textContent = method.name;
+            btn.dataset.index = index;
+            methodList.appendChild(btn);
+
+            const detailsDiv = document.createElement('div');
+            detailsDiv.className = 'method-details';
+            detailsDiv.id = `${topicId}-method-${index}`;
+            detailsDiv.innerHTML = `
+                <h3>${method.name}</h3>
+                <p>${method.description}</p>
+                <div class="syntax">${method.syntax}</div>
+                
+                <div class="interactive-example">
+                    <h4>Try It Yourself! 🎮</h4>
+                    <textarea class="code-editor">${method.exampleCode}</textarea>
+                    <button class="run-btn">Run Code</button>
+                    <div class="output"><span class="prompt">></span></div>
+                </div>
+
+                <div class="mini-challenge">
+                    <h4>${method.challenge.title}</h4>
+                    <p>${method.challenge.task}</p>
+                </div>
+            `;
+            methodContent.appendChild(detailsDiv);
+        });
+
+        methodList.addEventListener('click', (e) => {
+            if (e.target.classList.contains('method-btn')) {
+                const index = e.target.dataset.index;
+                const allDetails = section.querySelectorAll('.method-details');
+                const allBtns = section.querySelectorAll('.method-btn');
+
+                const currentlyActive = e.target.classList.contains('active');
+                
+                allDetails.forEach(div => div.style.display = 'none');
+                allBtns.forEach(b => b.classList.remove('active'));
+
+                if (!currentlyActive) {
+                    section.querySelector(`#${topicId}-method-${index}`).style.display = 'block';
+                    e.target.classList.add('active');
+                }
+            }
+        });
+
+        methodContent.addEventListener('click', (e) => {
+            if (e.target.classList.contains('run-btn')) {
+                const exampleDiv = e.target.closest('.interactive-example');
+                const editor = exampleDiv.querySelector('.code-editor');
+                const outputDiv = exampleDiv.querySelector('.output');
+                const code = editor.value;
+
+                outputDiv.innerHTML = '<span class="prompt">></span> ';
+                const originalConsoleLog = console.log;
+                console.log = (...args) => {
+                    const formattedArgs = args.map(arg => {
+                        if (typeof arg === 'object' && arg !== null) {
+                            return JSON.stringify(arg, null, 2);
+                        }
+                        return String(arg);
+                    }).join(' ');
+                    outputDiv.innerHTML += formattedArgs + '\\n<span class="prompt">></span> ';
+                };
+
+                try {
+                    new Function(code)();
+                } catch (err) {
+                    outputDiv.innerHTML += `<span style="color:red;">Error: ${err.message}</span>`;
+                } finally {
+                    console.log = originalConsoleLog;
+                }
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setupTopic('arrays', data.arrays);
+        setupTopic('strings', data.strings);
+        setupTopic('objects', data.objects);
+        
+        // Auto-click the first button in each section to show content by default
+        document.querySelector('#arrays .method-btn').click();
+        document.querySelector('#strings .method-btn').click();
+        document.querySelector('#objects .method-btn').click();
+    });
+    </script>
+</body>
+</html>

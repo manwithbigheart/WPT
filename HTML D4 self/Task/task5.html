@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5: Find and Replace Text</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-xl">
+        <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Text Replacer Tool</h1>
+        
+        <div class="mb-4">
+            <label for="main-text" class="block text-gray-700 font-medium mb-2">Your Text</label>
+            <textarea id="main-text" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">The quick brown fox jumps over the lazy dog. The dog was not amused. A fox is a clever animal.</textarea>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div>
+                <label for="find-text" class="block text-gray-700 font-medium mb-2">Find This:</label>
+                <input type="text" id="find-text" value="fox" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label for="replace-text" class="block text-gray-700 font-medium mb-2">Replace With:</label>
+                <input type="text" id="replace-text" value="wolf" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+            <button id="replace-one-btn" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">Replace First</button>
+            <button id="replace-all-btn" class="w-full bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-300">Replace All</button>
+        </div>
+        <p id="status" class="text-center mt-4 text-gray-600 h-5"></p>
+    </div>
+
+    <script>
+        const mainTextArea = document.getElementById('main-text');
+        const findInput = document.getElementById('find-text');
+        const replaceInput = document.getElementById('replace-text');
+        const replaceOneBtn = document.getElementById('replace-one-btn');
+        const replaceAllBtn = document.getElementById('replace-all-btn');
+        const statusMessage = document.getElementById('status');
+
+        function showStatus(message) {
+            statusMessage.textContent = message;
+            setTimeout(() => {
+                statusMessage.textContent = '';
+            }, 2000);
+        }
+
+        replaceOneBtn.addEventListener('click', function() {
+            const originalText = mainTextArea.value;
+            const findText = findInput.value;
+            const replaceText = replaceInput.value;
+
+            if (!findText) {
+                showStatus('"Find" field cannot be empty.');
+                return;
+            }
+
+            const newText = originalText.replace(findText, replaceText);
+            
+            if (originalText === newText) {
+                showStatus(`'${findText}' was not found.`);
+            } else {
+                mainTextArea.value = newText;
+                showStatus('Replaced the first occurrence.');
+            }
+        });
+
+        replaceAllBtn.addEventListener('click', function() {
+            const originalText = mainTextArea.value;
+            const findText = findInput.value;
+            const replaceText = replaceInput.value;
+            
+            if (!findText) {
+                showStatus('"Find" field cannot be empty.');
+                return;
+            }
+
+          
+            const findRegex = new RegExp(findText.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g');
+            const newText = originalText.replace(findRegex, replaceText);
+            
+            if (originalText === newText) {
+                showStatus(`'${findText}' was not found.`);
+            } else {
+                mainTextArea.value = newText;
+                showStatus('Replaced all occurrences.');
+            }
+        });
+    </script>
+</body>
+</html>

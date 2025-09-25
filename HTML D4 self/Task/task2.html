@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2: Form Validation (onsubmit)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .error-message {
+            color: #ef4444; /* red-500 */
+            font-size: 0.875rem; /* text-sm */
+            margin-top: 0.25rem; /* mt-1 */
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Registration Form</h1>
+        
+        <form id="registration-form" novalidate>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <p id="email-error" class="error-message">Please enter a valid email address.</p>
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                <input type="password" id="password" name="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <p id="password-error" class="error-message">Password must be at least 8 characters long.</p>
+            </div>
+
+            <div class="mb-4">
+                <label for="contact" class="block text-gray-700 font-medium mb-2">Contact Number</label>
+                <input type="tel" id="contact" name="contact" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <p id="contact-error" class="error-message">Please enter a valid 10-digit contact number.</p>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-gray-700 font-medium mb-2">Gender</label>
+                <div class="flex items-center space-x-4">
+                    <label class="flex items-center">
+                        <input type="radio" name="gender" value="male" class="text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">Male</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="gender" value="female" class="text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">Female</span>
+                    </label>
+                     <label class="flex items-center">
+                        <input type="radio" name="gender" value="other" class="text-blue-600 focus:ring-blue-500">
+                        <span class="ml-2 text-gray-700">Other</span>
+                    </label>
+                </div>
+                 <p id="gender-error" class="error-message">Please select your gender.</p>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">Register</button>
+        </form>
+        <p id="success-message" class="text-green-600 font-medium mt-4 text-center" style="display: none;">Form submitted successfully!</p>
+    </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            // Prevent form from submitting to run validation first
+            event.preventDefault();
+            
+            let isValid = true;
+
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('input').forEach(el => el.classList.remove('border-red-500'));
+            document.getElementById('success-message').style.display = 'none';
+
+            // Email validation
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                emailError.style.display = 'block';
+                email.classList.add('border-red-500');
+                isValid = false;
+            }
+
+            // Password validation
+            const password = document.getElementById('password');
+            const passwordError = document.getElementById('password-error');
+            if (password.value.length < 8) {
+                passwordError.style.display = 'block';
+                password.classList.add('border-red-500');
+                isValid = false;
+            }
+
+            // Contact validation
+            const contact = document.getElementById('contact');
+            const contactError = document.getElementById('contact-error');
+            const contactRegex = /^\d{10}$/;
+            if (!contactRegex.test(contact.value)) {
+                contactError.style.display = 'block';
+                contact.classList.add('border-red-500');
+                isValid = false;
+            }
+
+            // Gender validation
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const genderError = document.getElementById('gender-error');
+            if (!gender) {
+                genderError.style.display = 'block';
+                isValid = false;
+            }
+
+            // If all fields are valid
+            if (isValid) {
+                document.getElementById('success-message').style.display = 'block';
+                console.log('Form Submitted Successfully!');
+                
+            }
+        });
+    </script>
+</body>
+</html>
