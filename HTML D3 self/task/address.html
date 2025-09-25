@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Address Form</title>
+  <link rel="stylesheet" href="address.css">
+</head>
+<body>
+  <div class="container">
+    <div class="address-box">
+      <label for="permanent">Permanent Address</label>
+      <textarea id="permanent" rows="6"></textarea>
+    </div>
+
+    <button onclick="copyAddress()">Same As Permanent</button>
+
+    <div class="address-box">
+      <label for="temporary">Temporary Address</label>
+      <textarea id="temporary" rows="6"></textarea>
+    </div>
+  </div>
+
+  <script>
+    function copyAddress() {
+      document.getElementById("temporary").value =
+        document.getElementById("permanent").value;
+    }
+  </script>
+</body>
+</html>

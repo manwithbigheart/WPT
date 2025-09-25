@@ -1,0 +1,84 @@
+/* General Body Styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+/* Main container for both tasks */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for an individual task */
+.task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Vertical line between tasks */
+.separator {
+  width: 2px;
+  background-color: #000;
+  align-self: stretch;
+  /* Makes the line fill the height */
+}
+
+h2 {
+  margin-top: 0;
+  font-weight: normal;
+  color: #333;
+}
+
+/* The box that will hold the image */
+.image-box {
+  width: 280px;
+  height: 140px;
+  border: 2px solid black;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  color: #888;
+  font-size: 1.5rem;
+}
+
+/* Text labels below the image box */
+.task-container>p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Container for the group of buttons in Task 2 */
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* General button styling */
+button {
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #e9e9e9;
+}

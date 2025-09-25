@@ -1,0 +1,17 @@
+.myform1 {
+  padding: 5%;
+  margin: 2%;
+}
+
+.innerbox {
+  border: 2px darkblue solid;
+  padding: 5%;
+  margin: 5%;
+  background-color: lightblue;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: darkblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 28px;
+}

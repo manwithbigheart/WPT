@@ -1,0 +1,31 @@
+.body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.td {
+  width: 80px;
+  height: 80px;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input {
+  margin: 8px;
+  padding: 5px;
+}
+
+.button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  cursor: pointer;
+}

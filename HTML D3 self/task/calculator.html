@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calci</title>
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body class="myform1">
+<div class="innerbox">
+  <!-- --------------HTML code for calculator form ---------------------->
+
+  <h1>Simple Calculator using JavaScript</h1>
+  <p>Enter two numbers and select an operator to perform the calculation.</p>
+  <form class="myform">
+
+  <input type="number" id="num1" placeholder="Enter first number">
+  <input type="number" id="num2" placeholder="Enter second number">
+
+  <br><br><br>
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <button type="button" onclick="calculate()">Calculate</button>
+
+  <br><br>
+  <!-- Result will be displayed here -->
+  <div id="result"></div>
+  </form>
+  <br>
+  </div>
+
+  <!-- --------------JavaScript code for calculation ---------------------->
+  <script>
+    function calculate() {
+      // Get the input values
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var operator = document.getElementById("operator").value;
+
+      // Perform the calculation
+      var result;
+      if (operator === "+") {
+        result = num1 + num2;
+      } else if (operator === "-") {
+        result = num1 - num2;
+      } else if (operator === "*") {
+        result = num1 * num2;
+      } else if (operator === "/") {
+        result = num1 / num2;
+      }
+
+      // Display the result
+      document.getElementById("result").innerText = "Result: " + result;
+    }
+  </script>
+</body>
+</html>
