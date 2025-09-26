@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    button{
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: lightblue;
+    }
+    button:hover{
+      background-color: lightgreen;
+    }
+    div{
+    text-align: center;
+    background-image: linear-gradient(red, orange, yellow);
+    /* height: 100vh; */
+}
+    
+  </style>
+</head>
+<body>
+  <div style="text-align: center;  ">
+  <br>
+  <button type="button" id="btnhide">Hide</button> &nbsp;&nbsp;
+  <button type="button" id="btnshow">Show</button> &nbsp;&nbsp;
+  <button type="button" id="btntoggle">Toggle</button><br><br>
+  <img id="img2" src="https://cdn.pixabay.com/objects3d/2025/07/19/07-28-30-942/render_720_720_0_340_0.png" alt="burning fire" height="300px" width="300px"  style="border-radius: 50%;"><br><br>
+  <button type="button" id="btnup">slide up</button> &nbsp;&nbsp;
+  <button type="button" id="btndown">slide down</button> &nbsp;&nbsp;
+  <button type="button" id="btnfin">Fade in</button> &nbsp;&nbsp;
+  <button type="button" id="btnfout">Fade out</button> &nbsp;&nbsp;
+  <br>
+  </div>
+  <script>
+    $(document).ready(function(){
+      $('#btnhide').click(function(){
+        $('#img2').hide(3000,()=>{alert("image is hidden")});
+      });
+      $("#btnshow").click(function(){
+        $("#img2").show(3000,()=>{alert("image is shown")});
+      });
+      $("#btntoggle").click(function(){
+        $("#img2").toggle(3000,()=>{alert("image is toggled")});
+      });
+      $("#btnup").click(function(){
+        $("#img2").slideUp(3000,()=>{alert("image is slide up")});
+      });
+      $("#btndown").click(function(){
+        $("#img2").slideDown(3000,()=>{alert("image is slide down")});
+      });
+      $("#btnfin").click(function(){
+        $("#img2").fadeIn(3000,()=>{alert("image is fade in")});
+      });
+      $("#btnfout").click(function(){
+        $("#img2").fadeOut(3000,()=>{alert("image is fade out")});
+      });
+    });
+  </script>
+</body>
+</html>

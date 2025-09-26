@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <br><hr>
+
+  <script>
+// ----------------------Array Destructuring-------------------------------
+document.write("<b> Array Destructuring</b> <br>");
+// creating array 
+    let course = ['react','java','python','javascript'];
+
+// destructuring array
+    const [sub1,sub2,sub3,sub4] = course;   // destructing method 
+
+    document.write(sub1,"<br>",sub2,"<br>",sub3,"<br>",sub4,"<br>","<hr>");
+
+// ----------------------------------------------------------------------------
+
+document.write("<b> Object Destructuring</b> <br>");
+
+// creating object
+      let emp = {
+        id:101,
+        name:"Abdul",
+        post:"Manager",
+        address:"Mumbai",
+
+      };
+// destructuring the object
+
+      const{id,name,post,address} = emp;
+      document.write(id,"<br>",name,"<br>",post,"<br>",address,"<br>");
+
+// ---------------------------------------------------------------------------- 
+
+
+
+  </script>
+</body>
+</html>

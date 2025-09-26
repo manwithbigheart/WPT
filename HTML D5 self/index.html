@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive File Structure</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px 40px;
+        }
+        h1 {
+            text-align: center;
+            color: #4285F4; /* Google's blue */
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .folder > ul {
+            padding-left: 30px;
+            border-left: 2px solid #e0e0e0;
+            margin-left: 10px;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 5px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .item-name {
+            font-size: 1rem;
+        }
+        .folder > .item-name {
+            font-weight: bold;
+            color: #5f6368;
+        }
+        .open-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #34A853; /* Google's green */
+            color: white !important;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+        .open-button:hover {
+            background-color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Drive Folder Structure</h1>
+    <ul>
+        <li class="folder">
+            <span class="item-name">📁 CPP</span>
+            <a href="#" target="_blank" class="open-button">Open Folder</a>
+        </li>
+        <ul>
+            <li><span class="item-name">📄 C++_200_mcqs.docx</span><a href="#" target="_blank" class="open-button">Open</a></li>
+            <li><span class="item-name">💻 C++ Practice Question Bank</span><a href="#" target="_blank" class="open-button">Open</a></li>
+            <li><span class="item-name">📄 oops_Assigment.docx</span><a href="#" target="_blank" class="open-button">Open</a></li>
+        </ul>
+
+        <li class="folder">
+            <span class="item-name">📁 Database</span>
+            <a href="#" target="_blank" class="open-button">Open Folder</a>
+        </li>
+        <ul>
+            <li><span class="item-name">📄 Database_Technologies_200_MCQs.docx</span><a href="#" target="_blank" class="open-button">Open</a></li>
+            <li><span class="item-name">📄 SQL_Assignment.docx</span><a href="#" target="_blank" class="open-button">Open</a></li>
+            <li><span class="item-name">📄 abdulrehman.docx</span><a href="#" target="_blank" class="open-button">Open</a></li>
+        </ul>
+
+        <li class="folder">
+            <span class="item-name">📁 WPT</span>
+            <a href="#" target="_blank" class="open-button">Open Folder</a>
+        </li>
+        <ul>
+            <li><span class="item-name">📄 Untitled document (HTML Notes)</span><a href="#" target="_blank" class="open-button">Open</a></li>
+            <li><span class="item-name">📄 jQuery Notes🖍️_.pdf</span><a href="#" target="_blank" class="open-button">Open</a></li>
+            <li><span class="item-name">📄 JavaScript.pdf</span><a href="#" target="_blank" class="open-button">Open</a></li>
+        </ul>
+
+        <li><span class="item-name">📈 Billing</span><a href="#" target="_blank" class="open-button">Open</a></li>
+        <li><span class="item-name">📄 Exception Handling.pdf</span><a href="#" target="_blank" class="open-button">Open</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

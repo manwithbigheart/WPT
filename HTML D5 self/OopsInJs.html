@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //-----------------------------------------------------------
+
+    // why oops got introduced:
+    // - to provide code reusabilty 
+    // - code reusabilty 
+    // - modular structure
+
+    // Class: Collection of data member and member function
+    //        It is a template that we can reuse.
+    //        To create class we use Class keyword.
+    //        Class name always starts with Capital letter.
+
+
+    // --------------------- Creating a Class -----------------
+
+    class Person{
+      // data member
+      pname = "Rahul";
+      Pcontact = 9876543210;
+      Paddress = "Mumbai";
+
+  //----------------------------1st Method to create Member function-------------------
+      // member function
+    //   personDetails = function(){
+    //     console.log("Name: "+this.pname);
+    //     console.log("Contact: "+this.Pcontact);
+    //     console.log("Address: "+this.Paddress);
+    //   }
+    
+
+  // --------------------- Creating member function -----------------
+
+    personDetails(){
+        return `name:${this.pname} contact:${this.pcontact} address:${this.paddress}`;
+    }
+    }
+  //-----------------------------------------------------------
+  // --------------------- Creating Object -----------------
+    // Object: Instance of a class
+    //         Collection of data.
+    //         It is a real world entity. 
+    //         To create object we use new keyword.
+    //         Object name always starts with small letter.
+
+  
+
+  </script>
+</body>
+</html>

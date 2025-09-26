@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+
+  <div style="text-align: center;  ">
+  <hr><br>
+  <button type="button" id="btnhide">Hide</button> &nbsp;&nbsp;
+  <button type="button" id="btnshow">Show</button> &nbsp;&nbsp; <br>
+  <video src="./task.mp4" controls autoplay height="600px" width="800px" id="vid"></video>
+  <h2 id="d3">hello this is text which will change colour when hovered and clicked</h2>
+  </div>
+  <br><hr>
+  <br>
+  <hr>
+  <div style="text-align: center;  ">
+  <h1>Fun with Hover and rotating image</h1>
+  <img id="img1" src="https://cdn.pixabay.com/objects3d/2025/07/19/07-28-30-942/render_720_720_0_340_0.png" alt="candel-image" height="300px" width="300px" style="border-radius: 50%;">
+  <p>Hover over the image to see the effect!</p>
+  <hr><br><br>
+  </div>
+  <script>
+    $(document).ready(function(){
+      $("#btnhide").click(function(){
+        $("#vid").hide(3000,()=>{alert("video is hidden")});
+      });
+      $("#btnshow").click(function(){
+        $("#vid").show(3000,()=>{alert("video is shown")});
+      });
+      // $("#d3").hover(function(){
+      //   $(this).css("color","red");
+      // },function(){
+      //   $(this).css("color","black");
+      // });
+
+
+      $("#d3").mouseenter(function(){
+        $(this).css("color","red");
+      });
+      $("#d3").mouseleave(function(){
+        $(this).css("color","blue");
+      });
+      $("#d3").click(function(){
+        $(this).css({"color":"green", "backgroundColor":"yellow"} );
+      });
+      
+      $("#img1").hover(function(){
+        $(this).css({"transform":"rotate(0deg)", "transition":"all 1s ease-in-out"});
+      }, function(){
+        $(this).css({"transform":"rotate(360deg)", "transition":"all 1s ease-in-out"});
+      });
+
+
+    });
+  </script>
+</body>
+</html>
