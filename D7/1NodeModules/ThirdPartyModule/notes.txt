@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------
+
+NPM (Node Package Manager):
+it is a open source library which is used to get default function.
+
+--It is comand line tool used for installing, updates or uninstalling packages in your Node.js packages in your Application.
+-- It is also an online repository for open source Node.js package
+
+---------------------------------------------------------------------------------
+
+Create package.json file :
+step:  
+     |npm init -y
+
+
+
+use Of package.json :
+                     -It keeps track of all dependencies.
+                     (eg: watchman keeping records of visitors) 
+
+----------------------------------------------------------------------------------
+
+To use third party GOTO npmjs.com website and SEARCH for "Chalk".
+To install and use it:
+                      npm i chalk
+
+-----------------------------------------------------------------------------------
+
+
+node modules : all the third party dependencies install here
+package.json : it keeps all entries of install dependencies
+package-lock.json : it contains detail description of all install dependencies
+
+
+----------------------------------------------------------------------------------
+
+To use third party GOTO npmjs.com website and SEARCH for "validator     or".
+To install and use it:
+                      npm i validator
+      or
+                      import validator from 'validator';
+
+function: 
+        allow to validate email or additional things
+
+-----------------------------------------------------------------------------------
+
+To use third party GOTO npmjs.com website and SEARCH for "prompt     or".
+To install and use it:
+                      npm i prompt
+function: 
+        allow to take input from user in terminal.
+-----------------------------------------------------------------------------------
+
+
+what is event:
+
+
+file operation: 
+                Creating, reading, updating
+                provides file system moduless to interact with files.
+
+-------------------------------------------------------------------------------------

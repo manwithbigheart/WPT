@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+
+node moudles types :
+
+1.core moule : provided by node module itself
+2.local module : build by developer and used by himself
+3.third party module: build by other developers and are provided by open source 
+
+-------------------------------------------------------------------------------
+(don't requires to install, can be imported and directly used)
+--core module contains :
+
+  http module:    to create http server in node.js
+  os module :     provide info about os
+  path :          to handel the file path 
+  url :           to pass url string
+  fs :            to handel the file system 
+  querystring:    to handel url query 
+  util :          to access utility function
+
+tp use above modules we have to import it 
+eg:  const varibaleName = require('ModuleName');
+
+
+__dirname : it provide 
+----------------------------------------------------------------------------------

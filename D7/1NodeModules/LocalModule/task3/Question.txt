@@ -1,0 +1,1 @@
+create new js file with name finNumber and write logic in it to find wehter number is even or odd and print as it is even or odd number and export it in another file as local module

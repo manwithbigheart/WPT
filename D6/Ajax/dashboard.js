@@ -61,7 +61,7 @@ function addProduct(){
     document.getElementById("txtquantity").value="";
 
   };
-  xmlObj.open("POST","http://localhost:5600/products");
+  xmlObj.open("POST","http://localhost:5500/products");
   xmlObj.send(prodJson);
 }
 
@@ -82,7 +82,7 @@ function getSingleProduct(){
     document.getElementById("utxtquantity").value=prodObj.quantity
     };
     // step3: create requests 
-    xmlObj.open("GET",`http://localhost:5600/products/${id}`);
+    xmlObj.open("GET",`http://localhost:5500/products/${id}`);
     //step4: send request 
     xmlObj.send();
 }
@@ -107,7 +107,7 @@ function updateProduct(){
     document.getElementById("utxtquantity").value="";
 
   };
-  xmlObj.open("PUT",`http://localhost:5600/products/${id}`);
+  xmlObj.open("PUT",`http://localhost:5500/products/${id}`);
   xmlObj.send(prodJson);
 
 }

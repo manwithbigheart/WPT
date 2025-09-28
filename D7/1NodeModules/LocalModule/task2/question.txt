@@ -1,0 +1,1 @@
+create new js file with name cube of number and write logic in it to calculate cube of number and export it in another fule as local module.
