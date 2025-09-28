@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      .mypara {
+        border: 3px solid green;
+        font-size: 20px;
+        text-align: justify;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" id="btnHide">Hide</button> &nbsp;&nbsp;
+    <button type="button" id="btnShow">Show</button> &nbsp;&nbsp;
+    <button type="button" id="btnToggle">Toggle</button> <br />
+    <img id="img1" src="../assets/images/happyImg.jfif" alt="" />
+    <hr />
+    <!-- slid effect  -->
+    <button type="button" id="btnup">SlideUp</button> &nbsp;&nbsp;
+    <button type="button" id="btndown">SlideDown</button> &nbsp;&nbsp;
+    <button type="button" id="btnslide">SlideToggle</button> <br />
+
+    <p class="mypara">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
+      architecto facilis! Voluptatem officiis et dolore aspernatur optio vero
+      dolor cumque adipisci eius quia quisquam repellendus explicabo maxime,
+      blanditiis odio repudiandae? Laborum, ab! Cupiditate rerum facilis, porro
+      velit nostrum voluptatum unde amet et repudiandae nobis excepturi,
+      explicabo aperiam. Sunt totam excepturi reiciendis, maxime eos facilis
+      fugit, vero aut assumenda est harum et repellat? Quia ipsa quis placeat a
+      aliquid explicabo, vitae tempore pariatur architecto maxime. Nam eveniet
+      alias quos doloremque esse possimus temporibus asperiores, voluptate autem
+      laudantium quam quo mollitia, facere sed omnis ullam eligendi sunt
+      commodi! Ducimus, accusantium quae? Quae?
+    </p>
+<hr>
+<!-- fadein and fadeOut effect  -->
+  <button type="button" id="btnfout">FadeOut</button> &nbsp;&nbsp;
+  <button type="button" id="btnfin">FadeIn</button> &nbsp;&nbsp;
+  <button type="button" id="btnft">FadeToggle</button> <br />
+  <img id="img2" src="../assets/images/samosa-3.jfif" alt="">
+
+    <script>
+      $(document).ready(function () {
+        $("#btnHide").click(function () {
+          $("#img1").hide(3000);
+        });
+        $("#btnShow").click(function () {
+          $("#img1").show(3000);
+        });
+        $("#btnToggle").click(function () {
+          $("#img1").toggle(3000);
+        });
+        // slide code 
+        $('#btnup').click(()=>{
+            $('.mypara').slideUp(3000);
+        })
+        $('#btndown').click(()=>{
+            $('.mypara').slideDown(3000);
+        })
+        $('#btnslide').click(()=>{
+            $('.mypara').slideToggle(3000);
+        })
+        
+        // fadein and fadeOut 
+         $('#btnfout').click(()=>{
+            $('#img2').fadeOut(300);
+        })
+         $('#btnfin').click(()=>{
+            $('#img2').fadeIn(300);
+        })
+         $('#btnft').click(()=>{
+            $('#img2').fadeToggle(300);
+        })
+
+      });
+    </script>
+  </body>
+</html>
