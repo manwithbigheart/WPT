@@ -22,5 +22,5 @@ tp use above modules we have to import it
 eg:  const varibaleName = require('ModuleName');
 
 
-__dirname : it provide 
+
 ----------------------------------------------------------------------------------
